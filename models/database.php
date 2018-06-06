@@ -1,5 +1,6 @@
 <?php
-class DataBase{
+class DataBase
+{
 	private $hostname = 'localhost';
 	private $username = 'root';
 	private $password = '';
@@ -12,7 +13,9 @@ class DataBase{
 		mysqli_set_charset($this->conn, 'utf8');
 	}
 	function query($sql){
+
 		$this->result = mysqli_query($this->conn, $sql);
+		mysqli_query($this->conn, "UTF8");
 	}
 	function row(){
 		if($this->result){

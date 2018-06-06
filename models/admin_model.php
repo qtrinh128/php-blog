@@ -23,7 +23,9 @@ class AdminModel extends DataBase{
 	// add a category
 	function add_category($name_category){
 		$this->connect();
+		utf8_encode($name_category);
 		$sql = 'INSERT INTO `category` (`id`, `name_category`) VALUES (NULL, "'.$name_category.'")';
+		// echo $sql;
 		$this->query($sql);
 	}
 

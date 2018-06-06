@@ -26,7 +26,7 @@
 				<li><a href="#">Danh mục</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="?action=login-page" class="glyphicon glyphicon-login">Đăng nhập</a></li>
+				<li><a href="?controller=admin&action=page_login" class="glyphicon glyphicon-login">Đăng nhập</a></li>
 			</ul>
 		</div>
 	</nav>

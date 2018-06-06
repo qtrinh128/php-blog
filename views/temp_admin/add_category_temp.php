@@ -4,7 +4,7 @@ require 'views/layout/header_admin.php';
 
 <div class="container">
 	<h3>Thêm danh mục</h3>
-	<form action="?action=add_category" method="POST">
+	<form action="?controller=admin&action=add_category" method="POST" accept-charset='utf-8'>
 		<div class="form-group">
 			<label for="category">Tên danh mục</label>
 			<input type="text" class="form-control" id="category" name="category">

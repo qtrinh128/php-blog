@@ -4,7 +4,7 @@ require 'views/layout/header_admin.php';
 
 <div class="container">
 	<h3>Tên danh mục</h3>
-	<form class="form-horizontal" action="?action=edit_category" method="POST">
+	<form class="form-horizontal" action="?controller=admin&action=edit_category_by_id" method="POST">
 		<div class="form-group">
 			<div class="col-sm-10">
 				<input type="hidden" class="form-control" name="id" value="<?php echo $data['id']?>">
@@ -16,7 +16,7 @@ require 'views/layout/header_admin.php';
 		<div class="form-group">        
 			<div class="col-sm-offset-2 col-sm-10">
 				<button type="submit" class="btn btn-info">Sửa danh mục này</button>
-				<a href="?action=delete_category&id=<?php echo $data['id']?>" class='btn btn-danger'>Xóa danh mục này</a>
+				<a href="?controller=admin&action=delete_category_by_id&id=<?php echo $data['id']?>" class='btn btn-danger'>Xóa danh mục này</a>
 			</div>
 		</div>
 	</form>

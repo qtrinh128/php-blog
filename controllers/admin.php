@@ -1,11 +1,11 @@
 <?php
 require 'views/admin_view.php';
 require 'models/admin_model.php';
-class Admin{
+class admin{
 
 
-	function show_alert($messgae, $action){
-		echo"<script>alert('".$messgae."'); window.location='?action=".$action."';</script>";
+	function show_alert($messgae, $controller, $action){
+		echo"<script>alert('".$messgae."'); window.location='?controller=".$controller."&action=".$action."';</script>";
 	}
 	// private $admin = new AdminView();
 	public function show(){
@@ -13,7 +13,7 @@ class Admin{
 		$admin->show();
 	}
 
-	public function show_page_login(){
+	public function page_login(){
 		$admin = new AdminView();
 		$admin->show_page_login();
 	}
@@ -27,15 +27,15 @@ class Admin{
 		if($status == 1){
 			session_start();
 			$_SESSION['username'] = $user;
-			header('location: ?action=homepage-admin');
+			header('location: ?controller=admin&action=homepage_admin');
 		}else{
-			$this->show_alert('Đăng nhập không thành công', 'login-page');
+			$this->show_alert('Đăng nhập không thành công', 'admin', 'page_login');
 			// header('location: ?action=login-page');
 		}
 
 	}
 	// Đăng nhập thành công và redirect đến trang chủ admin
-	public function click_here(){
+	public function homepage_admin(){
 		$md_admin = new AdminModel();
 		$data = $md_admin->get_all_post();
 		$admin = new AdminView();
@@ -45,7 +45,7 @@ class Admin{
 	public function destroy_session(){
 		session_start();
 		session_unset();
-		header('location: ?action=login-page');
+		header('location: ?controller=admin&action=page_login');
 	}
 	// Hiển thị page thêm danh mục
 	function show_page_add_category(){
@@ -55,13 +55,13 @@ class Admin{
 	// adding catalogs to the database
 	function add_category(){
 		if (!isset($_POST['category'])) {
-			$this->show_alert('Vui lòng thực hiện lại', 'page_add_category');
+			$this->show_alert('Vui lòng thực hiện lại', 'admin', 'show_page_category');
 		}else if(empty(trim($_POST['category']))){
-			$this->show_alert('Vui lòng nhập giá trị', 'page_add_category');
+			$this->show_alert('Vui lòng nhập giá trị', 'admin', 'show_page_category');
 		}else{
 			$md_admin = new AdminModel();
 			$md_admin->add_category(strtoupper($_POST['category']));
-			$this->show_alert('Thêm thành công', 'list_category');
+			$this->show_alert('Thêm thành công', 'admin', 'show_page_category');
 		}
 	}
 	// Hiển thị page danh mục
@@ -85,14 +85,14 @@ class Admin{
 		// thử sửa đổi link trong htaccess xem có chạy được không và có hiển thị đúng theo id không?
 		$md_admin = new AdminModel();
 		$md_admin->delete_category_by_id($id);
-		$this->show_alert('Xóa thành công', 'list_category');
+		$this->show_alert('Xóa thành công', 'admin', 'show_page_category');
 	}
 	// thực hiện sửa danh mục
 	function edit_category_by_id(){
 		$id = $_POST['id'];
 		$name = $_POST['name_category'];
 		$md_admin = new AdminModel();
-		$md_admin->edit_category_by_id($name, $id);
-		$this->show_alert('Sửa thành công', 'list_category');
+		$md_admin->edit_category_by_id(strtoupper($name), $id);
+		$this->show_alert('Sửa thành công', 'admin', 'show_page_category');
 	}
 }
