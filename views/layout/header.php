@@ -1,6 +1,3 @@
-<!-- <?php
-	session_start();
-?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +17,13 @@
 	<nav class="nav navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="#" class="navbar-brand">qtrinh</a>
+				<a href="?controller=Post&action=loadAllPost" class="navbar-brand">qtrinh</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="#">Danh mục</a></li>
+				<li><a href="?controller=Category&action=loadAllCategory">Danh mục</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="?controller=admin&action=page_login" class="glyphicon glyphicon-login">Đăng nhập</a></li>
+				<li><a href="?controller=login&action=loadPageLogin" class="glyphicon glyphicon-login">Đăng nhập</a></li>
 			</ul>
 		</div>
 	</nav>

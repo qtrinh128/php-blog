@@ -1,17 +1,12 @@
 <?php
-if(isset($_GET['controller'])){
-	$controller = $_GET['controller'];
-	require 'controllers/'.$controller.'.php';
-	$controller = new $controller();
-	if(isset($_GET['action'])){
-		$action = $_GET['action'];
-		$controller->$action();
-	}else{
-		$controller->show();
-	}
-}
-else{
-	require 'controllers/admin.php';
-	$controller = new admin();
-	$controller->show();
+if(isset($_GET['controller']) && isset($_GET['action'])){
+    $getController = $_GET['controller'];
+    $getMethod = $_GET['action'];
+    require 'controllers/'.$getController.'.php';
+    $controller = new $getController();
+    $controller->$getMethod();
+}else{
+    require 'controllers/post.php';
+    $post = new Post();
+    $post->loadAllPost();
 }

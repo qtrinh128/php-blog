@@ -8,16 +8,16 @@ class DataBase
 	private $conn = null;
 	private $result = null;
 
-	function connect(){
+	public function connect(){
 		$this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->db_name);
 		mysqli_set_charset($this->conn, 'utf8');
 	}
-	function query($sql){
+	public function query($sql){
 
 		$this->result = mysqli_query($this->conn, $sql);
 		mysqli_query($this->conn, "UTF8");
 	}
-	function row(){
+	public function row(){
 		if($this->result){
 			$row = mysqli_num_rows($this->result);
 		}else{
@@ -25,7 +25,7 @@ class DataBase
 		}
 		return $row;
 	}
-	function fetch(){
+	public function fetch(){
 		if($this->result){
 			$data = mysqli_fetch_assoc($this->result);
 		}else{

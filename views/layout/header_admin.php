@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['username'])) {
-	echo"<script>alert('yêu cầu đăng nhập'); window.location='?controller=admin&action=page_login';</script>";
+if (!isset($_SESSION['email'])) {
+	echo"<script>alert('yêu cầu đăng nhập'); window.location='?controller=login&action=loadPageLogin';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -25,13 +25,13 @@ if (!isset($_SESSION['username'])) {
 	<nav class="nav navbar-default">
 		<div class="container">
 			<div class="navbar-header">
-				<a href="?controller=admin&action=homepage_admin" class="navbar-brand">qtrinh</a>
+				<a href="?controller=PostAdmin&action=loadAllPost" class="navbar-brand">qtrinh</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li><a href="?controller=admin&action=show_page_category">Danh mục</a></li>
+				<li><a href="?controller=CategoryAdmin&action=loadAllCategory">Danh mục</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="?controller=admin&action=destroy_session" class="glyphicon glyphicon-login">Đăng xuất</a></li>
+				<li><a href="?controller=Login&action=sessionDestroy" class="glyphicon glyphicon-login">Đăng xuất</a></li>
 			</ul>
 		</div>
 	</nav>
