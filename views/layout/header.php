@@ -11,6 +11,14 @@
 		body{
 			font-family: 'Roboto', sans-serif;
 		}
+		.font-weight-normal{
+			line-height: 3;
+			word-spacing: 0.2em;
+		}
+		.hinhanh-baiviet{
+			height: inherit;
+    		max-width: 100%;
+		}
 	</style>
 </head>
 <body>
