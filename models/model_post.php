@@ -11,6 +11,7 @@ class PostModel extends DataBase{
         }
         return $arrayData;
     }
+
     public function getContentPost($id){
         $this->connect();
         $sql = 'SELECT * FROM post WHERE id = '.$id;

@@ -6,7 +6,7 @@
         foreach($data as $key){
         ?>
         <ul class="list-group">
-            <li class="list-group-item"><a href='?controller=Category&action=showListPostInCategory&id=<?php echo $key['id']; ?>'><?php echo $key['name']; ?></a></li>
+            <li class="list-group-item"><a href='?controller=Post&action=showContentPost&id=<?php echo $key['id']; ?>'><?php echo $key['title']; ?></a></li>
         </ul>
         <?php
         }
