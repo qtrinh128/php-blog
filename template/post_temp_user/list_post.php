@@ -1,4 +1,4 @@
-<?php require 'views/layout/header.php'; ?>
+<?php require 'layout/header_guest.php'; ?>
 <div class="container">
     <h3 class="text-center">Danh sách bài post người dùng</h3>
     <?php
@@ -11,4 +11,4 @@
         }
     ?>
 </div>
-<?php require 'views/layout/footer.php'; ?>
+<?php require 'layout/footer_guest.php'; ?>

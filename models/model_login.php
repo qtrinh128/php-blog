@@ -1,5 +1,5 @@
 <?php
-require 'models/database.php';
+require 'config/DataBase.php';
 class LoginModel extends DataBase{
     public function checkLogin($emal, $pwd){
         $this->connect();

@@ -1,4 +1,4 @@
-<?php require 'views/layout/header.php'; ?>
+<?php require 'layout/header_guest.php'; ?>
 <div class="container">
     <h3 class="text-center">Trang đăng nhập</h3>
     <form action="?controller=Login&action=checkLogin" method="post">
@@ -18,4 +18,4 @@
         <button type="submit" class="btn btn-primary">Đăng nhập</button>
     </form>
 </div>
-<?php require 'views/layout/footer.php'; ?>
+<?php require 'layout/footer_guest.php'; ?>

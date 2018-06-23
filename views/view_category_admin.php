@@ -1,6 +1,6 @@
 <?php
 class ViewCategoryAdmin{
     public function loadAllCategory(){
-        require 'category_temp_admin/Category.php';
+        require 'template/category_temp_admin/Category.php';
     }
 }

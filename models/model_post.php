@@ -1,5 +1,5 @@
 <?php
-require 'models/database.php';
+require 'config/DataBase.php';
 class PostModel extends DataBase{
     public function getAllPost(){
         $this->connect();
@@ -17,5 +17,10 @@ class PostModel extends DataBase{
         $sql = 'SELECT * FROM post WHERE id = '.$id;
         $this->query($sql);
         return $this->fetch();
+    }
+    public function deletePost($id){
+        $this->connect();
+        $sql = 'DELETE FROM post WHERE post.id = '.$id;
+        $this->query($sql);
     }
 }

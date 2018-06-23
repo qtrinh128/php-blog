@@ -1,4 +1,4 @@
-<?php require 'views/layout/header.php'; ?>
+<?php require 'layout/header_guest.php'; ?>
 <div class="container">
         <div class="col-sm-10">
             <h3><?php echo $data['title']?></h3>
@@ -15,4 +15,4 @@
     <p class="font-weight-normal"><?php echo $data['content']?></p> -->
 
 </div>
-<?php require 'views/layout/footer.php'; ?>
+<?php require 'layout/footer_guest.php'; ?>

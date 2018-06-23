@@ -15,7 +15,6 @@ class DataBase
 	public function query($sql){
 
 		$this->result = mysqli_query($this->conn, $sql);
-		mysqli_query($this->conn, "UTF8");
 	}
 	public function row(){
 		if($this->result){

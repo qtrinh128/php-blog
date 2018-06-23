@@ -1,5 +1,5 @@
 <?php
-require 'models/database.php';
+require 'config/DataBase.php';
 class CategoryModel extends DataBase{
     public function getAllCategory(){
         $this->connect();
