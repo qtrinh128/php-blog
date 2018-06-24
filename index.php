@@ -1,10 +1,11 @@
 <?php
+// error_reporting(0);
 if(isset($_GET['controller']) && isset($_GET['action'])){
-    $getController = $_GET['controller'];
-    $getMethod = $_GET['action'];
-    require 'controllers/'.$getController.'.php';
-    $controller = new $getController();
-    $controller->$getMethod();
+    $controller = $_GET['controller'];
+    $method = $_GET['action'];
+    require 'controllers/'.$controller.'.php';
+    $controller = new $controller();
+    $controller->$method();
 }else{
     require 'controllers/post.php';
     $post = new Post();

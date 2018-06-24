@@ -13,4 +13,4 @@
         ?>
     </ul>
 </div>
-<?php require 'layout/footer.php'; ?>
+<?php require 'layout/footer_guest.php'; ?>

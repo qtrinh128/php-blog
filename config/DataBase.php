@@ -1,6 +1,7 @@
 <?php
 class DataBase
 {
+	private static $instance = null;
 	private $hostname = 'localhost';
 	private $username = 'root';
 	private $password = '';
@@ -8,9 +9,20 @@ class DataBase
 	private $conn = null;
 	private $result = null;
 
+	private function __construct(){}
+	public function getInstance(){
+		if(!self::$instance){
+			self::$instance = new DataBase();
+		}
+		return self::$instance;
+	}
+
 	public function connect(){
 		$this->conn = mysqli_connect($this->hostname, $this->username, $this->password, $this->db_name);
 		mysqli_set_charset($this->conn, 'utf8');
+		if(!$this->conn){
+			die('Ket noi that bai');
+		}
 	}
 	public function query($sql){
 

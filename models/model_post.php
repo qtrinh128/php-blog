@@ -1,26 +1,26 @@
 <?php
-require 'config/DataBase.php';
-class PostModel extends DataBase{
+include_once 'config/DataBase.php';
+class PostModel{
     public function getAllPost(){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'SELECT * FROM post';
-        $this->query($sql);
+        DataBase::getInstance()->query($sql);
         $arrayData = [];
-        while($data = $this->fetch()){
+        while($data = DataBase::getInstance()->fetch()){
             $arrayData[] = $data;
         }
         return $arrayData;
     }
 
     public function getContentPost($id){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'SELECT * FROM post WHERE id = '.$id;
-        $this->query($sql);
-        return $this->fetch();
+        DataBase::getInstance()->query($sql);
+        return DataBase::getInstance()->fetch();
     }
     public function deletePost($id){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'DELETE FROM post WHERE post.id = '.$id;
-        $this->query($sql);
+        DataBase::getInstance()->query($sql);
     }
 }

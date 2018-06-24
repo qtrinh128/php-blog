@@ -1,11 +1,11 @@
 <?php
 require 'config/DataBase.php';
-class LoginModel extends DataBase{
+class LoginModel{
     public function checkLogin($emal, $pwd){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'SELECT * FROM login WHERE email = "'.$emal.'" and password = "'.$pwd.'"';
-        $this->query($sql);
-        if($this->row() == 1){
+       	DataBase::getInstance()->query($sql);
+        if(DataBase::getInstance()->row() == 1){
             return true;
         }
         return false;

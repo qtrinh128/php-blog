@@ -1,6 +1,7 @@
 <?php
 require 'views/view_post_admin.php';
 require 'models/model_post.php';
+require 'models/model_category.php';
 class PostAdmin{
     public function loadAllPost(){
         $mModel = new PostModel();
@@ -15,10 +16,12 @@ class PostAdmin{
     }
     public function editPost(){
         $id = $_GET['id'];
+        $mModelCategory = new CategoryModel();
+        $category = $mModelCategory->getAllCategory();
         $mModel = new PostModel();
         $data = $mModel->getContentPost($id);
         $vPostAdmin = new ViewPostAdmin();
-        $vPostAdmin->editPost($data);
+        $vPostAdmin->editPost($data, $category);
 
     }
     public function deletePost(){

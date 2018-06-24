@@ -1,23 +1,23 @@
 <?php
-require 'config/DataBase.php';
-class CategoryModel extends DataBase{
+include_once 'config/DataBase.php';
+class CategoryModel{
     public function getAllCategory(){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'SELECT * FROM Category';
-        $this->query($sql);
+        DataBase::getInstance()->query($sql);
         $arrayData = [];
-        while($data = $this->fetch()){
+        while($data = DataBase::getInstance()->fetch()){
             $arrayData[] = $data;
         }
         return $arrayData;
     }
     // Hiển thị danh sách post trong category
     public function showListPostInCategory($idCategory){
-        $this->connect();
+        DataBase::getInstance()->connect();
         $sql = 'SELECT * FROM post WHERE id_category = '.$idCategory;
-        $this->query($sql);
+        DataBase::getInstance()->query($sql);
         $arrayData = [];
-        while($data = $this->fetch()){
+        while($data = DataBase::getInstance()->fetch()){
             $arrayData[] = $data;
         }
         return $arrayData;
