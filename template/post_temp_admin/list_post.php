@@ -1,5 +1,7 @@
 <?php require 'layout/header_admin.php'; ?>
 <div class="container">
+	<h3 class="text-center">Danh sách bài viết</h3>
+	<a href="?controller=PostAdmin&action=showPageAdd">Thêm bài viết</a>
 <?php
         foreach($data as $key){
     ?>

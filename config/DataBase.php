@@ -44,4 +44,12 @@ class DataBase
 		}
 		return $data;
 	}
+	public function affected(){
+		if($this->result){
+			$num = mysqli_affected_rows($this->conn);
+		}else{
+			$num = 0;
+		}
+		return $num;
+	}
 }
