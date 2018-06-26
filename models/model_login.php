@@ -13,10 +13,11 @@ class LoginModel{
 		return self::$instance;
 	}
 	
-    public function checkLogin($emal, $pwd){
+    public function checkLogin($email, $pwd){
         DataBase::getInstance()->connect();
-        $sql = 'SELECT * FROM login WHERE email = "'.$emal.'" and password = "'.$pwd.'"';
-       	DataBase::getInstance()->query($sql);
+        $sql = "SELECT * FROM login WHERE email = '%s' and password = '%s'";
+        $query = sprintf($sql, mysql_real_escape_string($email), mysql_real_escape_string($pwd)) ;
+       	DataBase::getInstance()->query($query);
         if(DataBase::getInstance()->row() == 1){
             return true;
         }

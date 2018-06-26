@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             <label for="pwd">Email</label>
-            <input type="text" class="form-control" name="pwd" value="<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];} ?>">
+            <input type="password" class="form-control" name="pwd" value="<?php if(isset($_COOKIE['password'])){echo $_COOKIE['password'];} ?>">
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

@@ -1,5 +1,5 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 if(isset($_GET['controller']) && isset($_GET['action'])){
     $controller = $_GET['controller'];
     $method = $_GET['action'];

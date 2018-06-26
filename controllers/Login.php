@@ -11,6 +11,7 @@ class Login{
         if(!isset($_POST['email']) && !isset($_POST['pwd'])){
             echo"<script>alert('Vui lòng đăng nhập lại'); window.location='?controller=login&action=loadPageLogin';</script>";
         }else{
+
             $email = $_POST['email'];
             $pwd = $_POST['pwd'];   
             if(LoginModel::getInstance()->checkLogin($email, $pwd)){
