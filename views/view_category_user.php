@@ -13,10 +13,10 @@
 		}
 		
 		
-		public function loadAllCategory($data){
+		public function loadAllCategory($category, $title){
 			require 'template/category_temp_user/Category.php';
 		}
-		public function loadListPostInCategory($data){
+		public function loadListPostInCategory($listPost, $title){
 			require 'template/category_temp_user/listPostInCategory.php';
 		}
 	}	

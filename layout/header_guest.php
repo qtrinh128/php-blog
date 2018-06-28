@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Trang chu</title>
+	<title><?php echo $title ?></title>
 	<link rel="stylesheet" href="public/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<script src="public/js/jquery-1.9.1.min.js" defer></script>

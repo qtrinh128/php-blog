@@ -2,18 +2,22 @@
 require 'views/view_login.php';
 require 'models/model_login.php';
 require 'views/view_post_admin.php';
-class Login{
-    public function loadPageLogin(){
-        LoginView::getInstance()->loadPageLogin();
-    }
-    public function checkLogin(){
 
+class Login{
+
+    // Hiển thị trang đăng nhập
+    public function loadPageLogin(){
+        $title = "Đăng nhập";
+        LoginView::getInstance()->loadPageLogin($title);
+    }
+
+    // Kiểm tra đăng nhập
+    public function checkLogin(){
         if(!isset($_POST['email']) && !isset($_POST['pwd'])){
             echo"<script>alert('Vui lòng đăng nhập lại'); window.location='?controller=login&action=loadPageLogin';</script>";
         }else{
-
-            $email = $_POST['email'];
-            $pwd = $_POST['pwd'];   
+            $email = trim($_POST['email']);
+            $pwd = trim($_POST['pwd']);   
             if(LoginModel::getInstance()->checkLogin($email, $pwd)){
                 session_start();
                 $_SESSION['email'] = $email ;
@@ -27,6 +31,9 @@ class Login{
             }
         }
     }
+    
+    // Đăng xuất - hủy session và cookie
+    // Load về trang đăng nhâp
     public function sessionDestroy(){
         session_start();
         session_destroy();

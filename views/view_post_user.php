@@ -13,10 +13,10 @@
 			return self::$instance;
 		}
 		
-		public function loadAllPost($data){
+		public function loadAllPost($post, $title){
 			require 'template/post_temp_user/list_post.php';
 		}
-		public function loadContentPost($data){
+		public function loadContentPost($contentPost, $title){
 			require 'template/post_temp_user/content_post.php';
 		}
 	}	

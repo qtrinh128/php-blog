@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION['email'])) {
+if (isset($_SESSION['email']) == false) {
 	echo"<script>alert('yêu cầu đăng nhập'); window.location='?controller=login&action=loadPageLogin';</script>";
 }
 ?>
@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Trang chu</title>
+	<title><?php echo $title ?></title>
 	<link rel="stylesheet" href="public/css/bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 

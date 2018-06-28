@@ -14,7 +14,7 @@
 		}
 		
 		
-		public function loadPageLogin(){
+		public function loadPageLogin($title){
 			require 'template/login_temp/login.php';
 		}
 	}	

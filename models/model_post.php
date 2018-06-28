@@ -15,7 +15,7 @@ class PostModel{
 	
     public function getAllPost(){
         DataBase::getInstance()->connect();
-        $sql = 'SELECT * FROM post';
+        $sql = "SELECT * FROM post";
         DataBase::getInstance()->query($sql);
         $arrayData = [];
         while($data = DataBase::getInstance()->fetch()){

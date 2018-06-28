@@ -12,10 +12,10 @@
 			return self::$instance;
 		}
 		
-		public function loadAllCategory($category){
+		public function loadAllCategory($category, $title){
 			require 'template/category_temp_admin/Category.php';
 		}
-		public function loadListPostInCategory($post){
+		public function loadListPostInCategory($post, $title){
 			require 'template/category_temp_admin/listPostInCategory.php';
 		}
 		public function showPageAdd(){

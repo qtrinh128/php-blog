@@ -3,7 +3,7 @@
     <h3 class="text-center">Danh sách danh mục</h3>
     <ul>
         <?php
-        foreach($data as $key){
+        foreach($category as $key){
         ?>
         <ul class="list-group">
             <li class="list-group-item"><a href='?controller=Category&action=showListPostInCategory&id=<?php echo $key['id']; ?>'><?php echo $key['name']; ?></a></li>
