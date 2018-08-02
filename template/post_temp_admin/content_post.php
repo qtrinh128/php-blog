@@ -1,5 +1,6 @@
 <?php require 'layout/header_admin.php'; ?>
 <div class="container">
+
         <div class="col-sm-10">
             <h3><?php echo $post['title']?></h3>
             <p><?php echo $post['author']?>: <?php echo $post['time_post']?></p>
@@ -11,6 +12,8 @@
         </div>
 
         <div class="col-sm-3"></div>
-        
+        <div class="container">
+
+        </div>
 </div>
 <?php require 'layout/footer_admin.php'; ?>

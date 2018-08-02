@@ -1,1 +1,5 @@
-alert('fasdfasd');
+// $( document )
+//     .ready( function ( ) {
+//         $( "#result" )
+//             .hide( 9000 );
+//     } );
